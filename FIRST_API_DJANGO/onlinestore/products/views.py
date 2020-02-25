@@ -35,6 +35,41 @@ def product_detail(request, pk):
 
     return resposne
 
+# modifiche per prova pratica
+
+def manufacturer_list(request):
+    manufacturers = Manufacturer.objects.all() # o una porzione [:30]
+    data = {"manufacturers" : list(manufacturers.values())}
+    response = JsonResponse(data)
+    return response
+
+
+def manufacturer_detail(request, pk):
+    try:
+        manufacturer = Manufacturer.objects.get(pk=pk)
+
+        # vogliamo anche i prodotti di un produttore 
+        #  vedi `related_name` di Product 
+        manufacturer_products = manufacturer.products.all()
+
+        data = {"manufacturer" : {
+            "name": manufacturer.name,
+            "location": manufacturer.location,
+            "active": manufacturer.active,
+            "products" : list(manufacturer_products.values())
+        }}
+        resposne = JsonResponse(data)
+
+    except manufacturer.DoesNotExist:
+        resposne = JsonResponse({
+            "error" : { 
+                "code" : 404,
+                "message" : "produttore non trovato"
+                }},
+                status=404) 
+
+    return resposne
+
 # class ProductDetailView(DetailView):
 #     model = Product
 #     template_name = "products/product_detail.html"
