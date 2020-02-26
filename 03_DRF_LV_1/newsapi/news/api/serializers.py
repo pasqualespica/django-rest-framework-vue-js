@@ -40,3 +40,23 @@ class ArticleSerializer(serializers.Serializer):
         instance.save()
 
         return instance
+
+    # https://www.django-rest-framework.org/api-guide/validators/
+
+    # Object-level validation
+    def validate(self, data):
+        """
+        `data` non e' altro che un dizionario
+        """
+        if data["title"] == data["description"]:
+            raise serializers.ValidationError("Titolo e descrizione devono essere diversi")
+        return data
+
+    # Field-level validation
+    # che e' simile alla
+    # CLEAN seguita dal nome del campo all'interno dei nostri FROM
+
+    def validate_title(self, value):
+        if len(value) < 60:
+            raise serializers.ValidationError("Scrivi un title con almeno 60 caratteri") 
+        return value

@@ -1,5 +1,12 @@
 # django-rest-framework-vue-js
 
+### Useful link 
+https://jsonformatter.org/
+https://www.django-rest-framework.org/
+https://www.django-rest-framework.org/topics/browsable-api/
+https://www.django-rest-framework.org/api-guide/validators/
+
+
 ## JAVASCRIPT per Sviluppatori Python - CORSO RAPIDO COMPLETO
  https://www.youtube.com/watch?v=VHlBwk_ZQRs&feature=youtu.be
 
