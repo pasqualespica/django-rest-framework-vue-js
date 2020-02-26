@@ -7,8 +7,8 @@ from rest_framework.decorators import api_view
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
-from news.models import Article
-from news.api.serializers import ArticleSerializer
+from news.models import Article, Journalist
+from news.api.serializers import ArticleSerializer, JournalistSerializer
 
 """
 Ora che abbiamo imparato a usare i Serializer di DRF nei processi di 
@@ -125,3 +125,18 @@ class ArticleDetailAPIview(APIView):
 #         return Response(status=status.HTTP_204_NO_CONTENT)
 
     
+class JournalistListCreateAPIview(APIView):
+    """
+    Mostra una elenco dei giornalisti e ne crea di nuovi !!!
+    """
+    def get(self, request):
+        journalists = Journalist.objects.filter()
+        serializer = JournalistSerializer(journalists, many=True, context={'request': request})
+        return Response(serializer.data)
+
+    def post(self, request):
+        serializer = JournalistSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST) 

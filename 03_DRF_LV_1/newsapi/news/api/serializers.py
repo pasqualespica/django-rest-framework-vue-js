@@ -1,13 +1,18 @@
 from rest_framework import serializers
-from news.models import Article
+from rest_framework.serializers import HyperlinkedRelatedField
+
+from news.models import Article, Journalist
 
 # per manipolare le date
 from datetime import datetime
-from django.utils.timesince import timesince
+from django.utils.timesince import timesince     
 
 class ArticleSerializer(serializers.ModelSerializer):
 
     time_since_publication = serializers.SerializerMethodField()
+    # con questo non campare l'id ma la su rapp stringa
+    # author = serializers.StringRelatedField()
+    # author = JournalistSerializer()
     class Meta:
         model = Article
         # diverse combinazioni ...
@@ -39,6 +44,18 @@ class ArticleSerializer(serializers.ModelSerializer):
         if len(value) < 60:
             raise serializers.ValidationError("Scrivi un title con almeno 60 caratteri") 
         return value
+
+
+class JournalistSerializer(serializers.ModelSerializer):
+    ## vedi nome relazione `related-name`
+    # articles  = ArticleSerializer(many=True, read_only=True)
+    articles  = HyperlinkedRelatedField (many=True, 
+                                        read_only=True,
+                                        view_name="article-detail")
+        
+    class Meta:
+        model = Journalist
+        fields = "__all__"   
 
 
 # class ArticleSerializer(serializers.Serializer):
