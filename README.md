@@ -245,3 +245,25 @@ True
 >>> 
 ```
 
+### Inspect ModelSerializer 
+
+```python
+(venv3) (base) Pasquales-MacBook-Pro:newsapi pasqualespica$ python manage.py shell
+Python 3.8.1 (default, Feb 13 2020, 17:25:51) 
+[Clang 11.0.0 (clang-1100.0.33.17)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from news.api.serializers import ArticleSerializer
+>>> serializr = ArticleSerializer()
+>>> print(repr(serializr))
+ArticleSerializer():
+    time_since_publication = SerializerMethodField()
+    author = CharField(max_length=50)
+    title = CharField(max_length=120)
+    description = CharField(max_length=200)
+    body = CharField(style={'base_template': 'textarea.html'})
+    location = CharField(max_length=120)
+    publication_date = DateField()
+    active = BooleanField(required=False)
+    created_at = DateTimeField(read_only=True)
+```
