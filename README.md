@@ -267,3 +267,18 @@ ArticleSerializer():
     active = BooleanField(required=False)
     created_at = DateTimeField(read_only=True)
 ```
+
+### Dajngo rest-framework LV2
+
+*CRUD Create, Read, Update, Delete*
+
+- **GET**             : recuperare una risorsa
+- **POST**            : creare una nuova risorsa
+- **PUT / PATCH**     : aggiornare una risorsa
+- **DELETE**          : cancellare una risorsa
+
+
+Detailed descriptions, with full methods and attributes, 
+for each of Django REST Framework's class-based views and serializers.
+http://www.cdrf.co/
+
