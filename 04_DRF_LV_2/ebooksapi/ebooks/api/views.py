@@ -6,16 +6,20 @@ from rest_framework.exceptions import ValidationError
 
 from ebooks.models import Ebook, Review
 from ebooks.api.serializers import EbookSerializer, ReviewSerializer
-from ebooks.api.permissions import IsAdminUserOrReadOnly
-from ebooks.api.permissions import isReviewAuthorOrReadOnly
-
+from ebooks.api.permissions import IsAdminUserOrReadOnly,isReviewAuthorOrReadOnly
+from ebooks.api.pagination import SmallSetPagination
 
 class EbookListCreateAPIView(generics.ListCreateAPIView):
-    queryset = Ebook.objects.all()
+    # TO REMOVE following Warning add ORDER_BY
+    # UnorderedObjectListWarning: Pagination may yield inconsistent results 
+    # with an unordered object_list: < class 'ebooks.models.Ebook' > QuerySet.
+
+    # con il '-' si invert l'ordine ..
+    queryset = Ebook.objects.all().order_by("-id")
     serializer_class = EbookSerializer
     # permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     permission_classes = [IsAdminUserOrReadOnly]
-
+    pagination_class = SmallSetPagination
 
 class EbookDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Ebook.objects.all()
