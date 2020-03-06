@@ -1,6 +1,7 @@
 from django.db import models
-
 from django.core.validators import MinValueValidator,MaxLengthValidator
+from django.contrib.auth.models import User
+
 
 # Create your models here.
 class Ebook(models.Model):
@@ -19,8 +20,8 @@ class Review(models.Model):
     #                                             MaxLengthValidator(5)])
     rating = models.CharField(max_length=4)
     review = models.TextField(blank=True, null=True)
-    review_author = models.CharField(max_length=8, blank=True, null=True)
-
+    # review_author = models.CharField(max_length=8, blank=True, null=True)
+    review_author = models.ForeignKey(User, on_delete=models.CASCADE)
     ebook = models.ForeignKey(Ebook,
                             on_delete=models.CASCADE,
                             related_name="reviews")
@@ -28,4 +29,4 @@ class Review(models.Model):
     # def __str__(self):
     #     return str(self.rating)
     def __str__(self):
-        return self.rating
+        return str(self.rating)

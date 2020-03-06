@@ -282,3 +282,9 @@ Detailed descriptions, with full methods and attributes,
 for each of Django REST Framework's class-based views and serializers.
 http://www.cdrf.co/
 
+
+## Setting permission policy
+https://www.django-rest-framework.org/api-guide/permissions/#setting-the-permission-policy
+
+
+
