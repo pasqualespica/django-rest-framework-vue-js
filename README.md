@@ -286,5 +286,6 @@ http://www.cdrf.co/
 ## Setting permission policy
 https://www.django-rest-framework.org/api-guide/permissions/#setting-the-permission-policy
 
-
+## Pagination
+https://www.django-rest-framework.org/api-guide/pagination/
 
