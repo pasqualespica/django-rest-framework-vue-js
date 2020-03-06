@@ -12,7 +12,7 @@ class ProfileSerializers(serializers.ModelSerializer):
 
 class ProfileAvatarSerializers(serializers.ModelSerializer):
 
-        class Meta:
+    class Meta:
         model = Profile
         fields = ["avatar"]
 

@@ -289,3 +289,10 @@ https://www.django-rest-framework.org/api-guide/permissions/#setting-the-permiss
 ## Pagination
 https://www.django-rest-framework.org/api-guide/pagination/
 
+## Authentication
+https://www.django-rest-framework.org/api-guide/authentication/#how-authentication-is-determined
+
+```bash
+pip install django-rest-auth
+
+```

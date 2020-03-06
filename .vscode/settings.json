@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "/Users/pasqualespica/my_data/PAS7B/my_workspaces/django-rest-framework-vue-js/05_DRF_LV_3/venv5/bin/python3"
+    "python.pythonPath": "/Users/pasqualespica/my_data/PAS7B/my_workspaces/django-rest-framework-vue-js/05_DRF_LV_3/venv5/bin/python3",
+    "python.formatting.provider": "black"
 }

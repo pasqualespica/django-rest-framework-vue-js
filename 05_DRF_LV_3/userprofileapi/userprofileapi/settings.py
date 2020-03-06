@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
+    'rest_framework.authtoken', # abilita Tokens nel pannello Admin
+    'rest_auth', # pip install django-rest-auth
     'profiles'
 ]
 
@@ -124,3 +126,12 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = "uploads"
+
+# https://www.django-rest-framework.org/api-guide/authentication/#how-authentication-is-determined
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+}
