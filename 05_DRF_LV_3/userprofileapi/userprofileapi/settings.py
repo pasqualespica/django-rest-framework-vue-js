@@ -37,10 +37,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 
     'rest_framework',
     'rest_framework.authtoken', # abilita Tokens nel pannello Admin
+
     'rest_auth', # pip install django-rest-auth
+    'rest_auth.registration', # see allauth
+
+    'allauth', # pip install django-allauth e' utilizzato da rest-auth
+    'allauth.account',
+    'allauth.socialaccount', # anche da social network
+
     'profiles'
 ]
 
@@ -135,3 +143,9 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     ]
 }
+
+
+SITE_ID = 1
+
+ACCOUNT_EMAIL_VERIFICATION = "none"
+ACCOUNT_EMAIL_REQUIRED = (True)

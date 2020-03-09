@@ -296,3 +296,9 @@ https://www.django-rest-framework.org/api-guide/authentication/#how-authenticati
 pip install django-rest-auth
 
 ```
+
+## Rest  Auth v.2 
+
+```bash
+pip install django-allauth
+```
