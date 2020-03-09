@@ -1,10 +1,16 @@
-from django.urls import path
+from django.urls import path, include
 # from profiles.api.views import ProfileList
-from profiles.api.views import ProfileViewSet
+from rest_framework.routers import DefaultRouter
+from profiles.api.views import (ProfileViewSet, ProfileStatusViewSet, AvatarUpdateView)
 
 # binding esplicito
-profile_list = ProfileViewSet.as_view({"get" : "list"})
-profile_detail = ProfileViewSet.as_view({"get" : "retrieve"})
+# profile_list = ProfileViewSet.as_view({"get" : "list"})
+# profile_detail = ProfileViewSet.as_view({"get" : "retrieve"})
+
+# binding implicito via Routers
+router = DefaultRouter()
+router.register(r'profiles', ProfileViewSet)
+router.register(r'status', ProfileStatusViewSet, basename="status")
 
 urlpatterns = [
 
@@ -12,11 +18,14 @@ urlpatterns = [
     #   ProfileList.as_view(),
     #   name="profile-list")
 
-    path("profiles/",
-        profile_list,
-        name="profile-list"),
-    path("profiles/<int:pk>",
-        profile_detail,
-        name="profile-detail"),
+    # path("profiles/",
+    #     profile_list,
+    #     name="profile-list"),
+    # path("profiles/<int:pk>",
+    #     profile_detail,
+    #     name="profile-detail"),
+
+    path("", include(router.urls)),
+    path("avatar/", AvatarUpdateView.as_view(), name="avatar-update")
 
 ]
