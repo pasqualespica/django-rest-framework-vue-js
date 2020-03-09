@@ -302,3 +302,8 @@ pip install django-rest-auth
 ```bash
 pip install django-allauth
 ```
+
+## ViewSets e Routers
+
+https://www.django-rest-framework.org/api-guide/viewsets/ 
+https://www.django-rest-framework.org/api-guide/routers/
