@@ -8,7 +8,7 @@ from profiles.models import Profile # crere un nuovo profile
 # __init__.py
 @receiver(post_save, sender=User)
 def create_profile(sender, instance, created, **kwargs):
-    print("Created ...", created)
+    print("singal.s.py => Created ...", created)
     if created:
         Profile.objects.create(user=instance)
 
