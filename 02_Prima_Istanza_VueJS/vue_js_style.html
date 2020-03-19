@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style media="screen">
+        .circle {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+        }
+        .mysquare {
+            width: 250px;
+            height: 250px;
+        }
+    </style>
+
+    <title>Class & Style Binding</title>
+</head>
+<body>
+
+    <div id="myapp">
+        <div class="row justify-content-center mt-3"> 
+            <!-- ESEMPIO 1 -->
+
+            <!-- <div class="circle"
+                v-bind:style="{
+                    backgroundColor : 'green', border : '5px solid orange'
+                }">
+            </div> -->
+ 
+            <!-- ESEMPIO 2 -->
+            
+            <!-- <div class="circle"
+                v-bind:style="styleObject">
+            </div> -->
+
+            <!-- ESEMPIO 3 -->
+            <div 
+                v-bind:class="{ circle : myflag, mysquare :!myflag}"
+                v-bind:style="styleObject">
+            </div>
+
+        </div>
+
+        <div class="row justify-content-center mt-3">
+            <button class="btn btn-success" @click="cambiaForma">Cambia Forma</button>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="vue_js_style.js"></script>
+</body>
+</html>
