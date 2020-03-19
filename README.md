@@ -326,3 +326,6 @@ https://vuejs.org/v2/api/#v-for
 
 https://vuejs.org/v2/guide/class-and-style.html
 
+## Vue.JS - List Rendering con v-for
+
+https://vuejs.org/v2/api/#v-for
