@@ -317,3 +317,6 @@ con Vue.js le nostre APP sono reattive ( vedi `console` da `inspect` del web bro
 ## Eventi e Metodi - Link Utili
 
 https://vuejs.org/v2/api/#v-on
+
+## Rendering Condizionale
+
