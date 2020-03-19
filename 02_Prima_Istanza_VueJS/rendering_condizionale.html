@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rendering Condizionale</title>
+</head>
+<body>
+
+    <div id="myapp">
+        <!-- <h2 v-if="auth">Il tuo profilo utente</h2>
+        <h2 v-else>Effetua il login</h2> -->
+
+        <h1>Articolo : {{ prodotto }}</h1>
+        <h3 v-if="quantita > 20">Dsiponibile</h3>
+        <h3 v-else-if="quantita > 0 && quantita < 20">Dsiponibilita' limitata</h3>
+        <h3 v-else>Articolo Esaurito !!!</h3>
+        <br>
+        <h3 v-show="sconto">Articolo in offerta</h3>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="rendering_condizionale.js"></script>
+</body>
+</html>
