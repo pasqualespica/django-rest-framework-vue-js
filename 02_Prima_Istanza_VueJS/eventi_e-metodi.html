@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eventi e Metodi</title>
+    <style media="screen">
+        .box {
+            background:  green;
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="myapp">
+        {{ lezione }}
+        <br>
+        <h3>Contatore : {{ counter }}</h3>
+        <!-- 
+            Eventi e Metodi - Link Utili
+            https://vuejs.org/v2/api/#v-on 
+        -->
+        <button v-on:click="incrementaContatore">Incrementa</button>
+        <!-- <button v-on:click="counter += 1">Incrementa</button> -->
+        <!-- <button @click="counter += 1">Incrementa</button> -->
+
+        <div 
+            class="box" 
+            @mouseover="overTheBox">
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="eventi_e-metodi.js"></script>
+</body>
+</html>
