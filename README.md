@@ -307,3 +307,9 @@ pip install django-allauth
 
 https://www.django-rest-framework.org/api-guide/viewsets/ 
 https://www.django-rest-framework.org/api-guide/routers/
+
+
+# Vue.js
+https://vuejs.org/
+
+con Vue.js le nostre APP sono reattive ( vedi `console` da `inspect` del web browser)

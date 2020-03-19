@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello VueJS</title>
+</head>
+<body>
+    <div id="myapp">
+        <!-- Mustache syntax -->
+        <h1>{{ message }}</h1>
+        <h1>{{ value*5 }}</h1>
+
+        <h1>Ciao {{ pasquale_name }}</h1>
+        <!-- oppure usare una direttiva ... -->
+        <!-- <h1 v-text="message"></h1> -->
+        <h1>{{ "Hello" + " World !!! concatentati"}}</h1>
+        <h1>{{ Math.random() }}</h1>
+        <h1>{{ message.split("").reverse().join("") }}</h1>
+        <img :src="img_src" alt="">
+        <!-- <img v-bind:src="img_src" alt=""> -->
+        <br>
+        <a :href="img_src">Link - Clicca QUI !</a>
+        <!-- <a v-bind:href="img_src">Link - Clicca QUI !</a> -->
+    </div>
+
+    <!-- Splendide immagini gratis per i tuoi progetti -->
+    <!-- https://pixabay.com/it/ -->
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
