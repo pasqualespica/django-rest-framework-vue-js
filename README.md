@@ -313,3 +313,7 @@ https://www.django-rest-framework.org/api-guide/routers/
 https://vuejs.org/
 
 con Vue.js le nostre APP sono reattive ( vedi `console` da `inspect` del web browser)
+
+## Eventi e Metodi - Link Utili
+
+https://vuejs.org/v2/api/#v-on
