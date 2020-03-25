@@ -329,3 +329,13 @@ https://vuejs.org/v2/guide/class-and-style.html
 ## Vue.JS - List Rendering con v-for
 
 https://vuejs.org/v2/api/#v-for
+
+## Vue.JS - Computed Properties
+
+Per questo motivo Vue ci mette a disposizione le **Computed Properties**.
+
+Simili ai methods che abbiamo già imparato ad utilizzare, si distinguono da questi per il fatto che i loro “risultati” vengono salvati in cache fino a che i valori da essi utilizzati non cambiano.
+
+Chiamati talvolta anche computed values, possiamo pensare a questi come a un’estensione del nostro data model, utile a mostrare valori risultanti da elaborazioni.
+
+È bene evitare di modificare i valori del data model tramite le computed properties, mantenendole leggere e “pure”.

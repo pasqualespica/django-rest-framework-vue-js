@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    <title>Computed Properties</title>
+</head>
+<body>
+
+    <div id="myapp">
+        <h3> Metodo 1: {{ getRandomNumber() }}</h3>
+        <h3> Metodo 2: {{ getRandomNumber() }}</h3>
+        <h3> Metodo 3: {{ getRandomNumber() }}</h3>
+        <hr>
+        <!-- per le computed senza parentesi  -->
+        <h3> Computed 1: {{ getRandomComputed }}</h3>
+        <h3> Computed 2: {{ getRandomComputed }}</h3>
+        <h3> Computed 3: {{ getRandomComputed }}</h3>
+        <hr>
+        <h3>Nome Completo : {{ getFullName }}</h3>
+        <h3>Nome Completo Reverso : <strong>{{ getReverseFullName }}</strong></h3>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="computed_prop.js"></script>
+</body>
+</html>
