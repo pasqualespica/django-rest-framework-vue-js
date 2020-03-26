@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" 
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+            crossorigin="anonymous">
+    <style media="screen">
+        .no-outline {
+            outline: 0 !important;
+        }
+    </style>
+
+    <title>ToDo App</title>
+</head>
+<body>
+
+    <div id="myapp">
+        <to-do
+            :tasks="tasks"
+            :amount="taskCount"
+            @add-task="addNewTask"
+            @del-task="rimuoviTask"
+        ></to-do>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="todo_app.js"></script>
+</body>
+</html>

@@ -339,3 +339,9 @@ Simili ai methods che abbiamo già imparato ad utilizzare, si distinguono da que
 Chiamati talvolta anche computed values, possiamo pensare a questi come a un’estensione del nostro data model, utile a mostrare valori risultanti da elaborazioni.
 
 È bene evitare di modificare i valori del data model tramite le computed properties, mantenendole leggere e “pure”.
+
+## ToDo App 
+
+https://getbootstrap.com/docs/4.0/components/alerts/
+
+
