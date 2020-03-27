@@ -1,4 +1,6 @@
 {
-    "python.pythonPath": "/Users/pasqualespica/my_data/PAS7B/my_workspaces/django-rest-framework-vue-js/05_DRF_LV_3/venv5/bin/python3",
-    "python.formatting.provider": "black"
+    "python.pythonPath": 
+    "/Users/pasqualespica/my_data/PAS7B/my_workspaces/django-rest-framework-vue-js/QuestionTime_App_prj/venv_prj/bin/python3",
+    "python.formatting.provider": "black",
+    "git.ignoreLimitWarning": true
 }
