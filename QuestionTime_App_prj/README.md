@@ -171,6 +171,16 @@ q.slug
 'prima-domanda-ma-funziona-2gr0j5'
 ```
 
+dopo run server , si puo' testare con ..,
 
+**POST**
+```
+http://127.0.0.1:8000/api/questions/
+```
 
+oppure il dettaglio **PUT** ***DELETE**
+
+```
+http://127.0.0.1:8000/api/questions/prima-domanda-ma-funziona-2gr0j5/
+```
 
