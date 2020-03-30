@@ -28,32 +28,35 @@ urlpatterns = [
     # URLS me la sezione amministrazione
     path('admin/', admin.site.urls),
 
+    # LOGIN tramite interfaccia browser standard
+    path("accounts/",
+         include("django.contrib.auth.urls")),
+
     # Registration tramite interfaccia browser standard
     path("accounts/register/",
         RegistrationView.as_view(
             form_class=CustomUserForm,
             success_url="/",
-        , name="django_resgistration_register" )), # name end-point path
+        ), name="django_registration_register"), # name end-point path
 
     # includiamo anche gi altri urls messi a disposizioni da django_resgistration
     path("accounts/",
         include("django_registration.backends.one_step.urls")),
 
-    # LOGIN tramite interfaccia browser standard
-    path("accounts/",
-        include("django.contrib.auth.urls")),
+    # # LOGIN tramite interfaccia browser standard
+    # path("accounts/",
+    #     include("django.contrib.auth.urls")),
 
     # login tramite browsable-api
     path("api-auth/",
         include("rest_framework.urls")),
 
     # login tramite REST
-    path("api/rest-auth",
+    path("api/rest-auth/",
         include("rest_auth.urls")),
 
     # registration tramite REST
-    path("api/rest-auth/registration",
+    path("api/rest-auth/registration/",
         include("rest_auth.registration.urls")),
-
 
 ]

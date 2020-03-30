@@ -1,0 +1,14 @@
+{% extends "auth_layout.html"%}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h1>Activation Failed</h1>
+<div class="container">
+    <div>
+
+        <p>{{ activation_error }}</p>
+    </div>
+
+</div>
+
+{% endblock %}
