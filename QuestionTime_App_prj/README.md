@@ -106,7 +106,71 @@ Poi sotto `user` creiamo la folder `api` con i nostri **serializers** e rispetti
 globale in `settings.py` se si e' autenticati.
 
 
-
 ### 2 - Questions app
+
+Adesso creiamo la nostra seconda app
+
+```bash
+python manage.py startapp questions
+```
+e poi agiungiamlo alla nostra lista di applicazioni installate  
+
+poi creiamo i nostri due modelli `Question` e `Answer`
+e infine il comando  `makemigrations`
+
+```bash
+(venv_prj) (base) Pasquales-MacBook-Pro:QuestionTime pasqualespica$ python manage.py makemigrations
+Migrations for 'questions':
+  questions/migrations/0001_initial.py
+    - Create model Question
+    - Create model Answer
+(venv_prj) (base) Pasquales-MacBook-Pro:QuestionTime pasqualespica$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: account, admin, auth, authtoken, contenttypes, questions, sessions, sites, socialaccount, users
+Running migrations:
+  Applying questions.0001_initial... OK
+```
+
+ed infine registriamo i nostri model nel file `admin.py` della nostra appa `questions`
+
+**precisazione sul campo `slug`**
+*path_url che fa riferimento ad una risorsa composto da lettere e trattini*
+
+1. generazione automaticat di questo campo
+facciamo cio' con signal (vedi `signals.py`) tramite la funzione `addSlug_2_question`
+
+2. per renderlo unico creaimo una funzione `` e la utlizziamo sempre nel
+nella creazione del nostro slug
+
+Per terminare il settaggio del nostro `signal` andiamo in `__init__.py`
+della nostra app `quesions`
+
+```python
+default_App_config = "quesions.apps.QuesionsConfig"
+```
+che fa riferimento al nostro file `apps.py` in cui andremo a fare l'Override della funzione `ready(self)`
+
+e lo possiamo testare con `shell` django-manage : 
+
+```python
+(venv_prj) (base) Pasquales-MacBook-Pro:QuestionTime pasqualespica$ python manage.py shell
+Python 3.8.1 (default, Feb 13 2020, 17:25:51) 
+[Clang 11.0.0 (clang-1100.0.33.17)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+from django.contrib.auth import get_user_model
+custom_user = get_user_model()
+u = custom_user.objects.first()
+u
+<CustomUser: admin>
+from questions.models import Question
+q = Question.objects.create(author=u, content="prima domanda ma funziona")
+q
+<Question: prima domanda ma funziona>
+q.slug
+'prima-domanda-ma-funziona-2gr0j5'
+```
+
+
 
 
