@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import include,path
+from django.urls import include, path, re_path 
 
 # https://django-registration.readthedocs.io/en/2.0.4/
 # https://django-registration.readthedocs.io/en/2.0.4/custom-user.html
@@ -23,6 +23,7 @@ from django.urls import include,path
 from django_registration.backends.one_step.views import RegistrationView
 
 from users.forms import CustomUserForm
+from core.views import IndexTemplateView
 
 urlpatterns = [
     # URLS me la sezione amministrazione
@@ -43,9 +44,14 @@ urlpatterns = [
     path("accounts/",
         include("django_registration.backends.one_step.urls")),
 
+    # Qui inclue my API ursl.py di USER
+
+
     # # LOGIN tramite interfaccia browser standard
     # path("accounts/",
     #     include("django.contrib.auth.urls")),
+    path("api/",
+         include("users.api.urls")),
 
     # login tramite browsable-api
     path("api-auth/",
@@ -58,5 +64,13 @@ urlpatterns = [
     # registration tramite REST
     path("api/rest-auth/registration/",
         include("rest_auth.registration.urls")),
+
+    # la mettiamo qui in fondo che sia applicata 
+    # solo dopo che non siano stati applicati quelli precedente `IndexTemplateView`
+    # espressione regolare che indica qualsiasi indirizzo
+    # https://docs.python.org/3/library/re.html
+    re_path(r"^.*$",
+        IndexTemplateView.as_view(),
+        name="entry-point")
 
 ]

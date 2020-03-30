@@ -90,6 +90,21 @@ poi andiamo in `settings.py` per configurarli ... e dopo il comando `migrate`
 
 dopo nel file `urls.py` per definire i path dei nostri package
 
+...
+
+Dobbiamo ora allestire una views ( un path url ) che corrispondera' con la nostra
+homepage della nosta SinglePageApplication ( see `LOGIN_REDIRECT_URL = "/"`)
+
+```python
+# https://docs.python.org/3/library/re.html
+re_path(r"^.*$",
+    IndexTemplateView.as_view(),
+    name="entry-point")
+```
+
+Poi sotto `user` creiamo la folder `api` con i nostri **serializers** e rispettive **views** e rispettivo `api/urls.py` con settaggio permesso
+globale in `settings.py` se si e' autenticati.
+
 
 
 ### 2 - Questions app
