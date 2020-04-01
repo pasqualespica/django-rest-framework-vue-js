@@ -10,24 +10,49 @@
         href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+
     <style media="screen">
+        html, body {
+            height: 100%;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .auth-box {
+            border:  3px solid lightgray;
+            border-radius:  10px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            width: 600px;
+            margin: auto;
+        }
+
         .login-form-container {
             width: 300px;
             margin: auto;
         }
+
         .registration-form-container {
             width: 400px;
             margin: auto;
+        }
+
+        .outer-area {
+            margin-top: 100px;
         }
 
     </style>
 </head>
 <body>
 
-    <div class="auth-box text-center">
-        {% block content %}
-        {% endblock %}
+    <div class="outer-area">
+        <div class="auth-box text-center">
+            {% block content %}
+            {% endblock %}
+        </div>
     </div>
+
     
 </body>
 </html>

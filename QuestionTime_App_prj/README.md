@@ -184,3 +184,36 @@ oppure il dettaglio **PUT** ***DELETE**
 http://127.0.0.1:8000/api/questions/prima-domanda-ma-funziona-2gr0j5/
 ```
 
+### Layout
+
+Google fonts
+
+### To test APP 
+
+https://www.django-rest-framework.org/topics/browsable-api/#the-browsable-api
+
+vs
+
+https://www.postman.com/
+
+### NODE.js
+
+Installare node.js
+https://nodejs.org/it/
+
+poi tramite `npm` installare `vue`
+
+```bash
+npm i -g @vue/cli
+```
+
+alla fine dovrebbe apparire qualcosa di simile
+
+```bash
+🎉  Successfully created project primo-esempio-vue.
+👉  Get started with the following commands:
+
+ $ cd primo-esempio-vue
+ $ npm run serve
+ ```
+
